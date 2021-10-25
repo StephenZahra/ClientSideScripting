@@ -1,0 +1,9 @@
+<div class="text-center">
+    <div class="mt-5" *ngFor="let article of article">
+        <p *ngIf="article.isBreaking == true">BREAKING</p>
+        <p>{{article.articleId}}</p>
+        <p>{{article.articleTitle}}</p>
+        <p>{{article.articleHeading}}</p>
+        <p>{{article.articleText}}</p>
+    </div>
+</div>
