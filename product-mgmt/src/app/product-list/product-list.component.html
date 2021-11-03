@@ -2,18 +2,25 @@
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">{{getTitle()}}</span>
         <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="filter">
+            <input 
+            name="txtListFiler"
+            class="form-control me-2" 
+            type="text" 
+            placeholder="Filter"
+            [(ngModel)]="listFilter"> <!--this line will allow for 2 way data-binding-->
         </form>
     </div>
 </nav>
 
 <div class="card mt-3">
     <div class="card-body">
-        Filtering by:
+        Filtering by: {{listFilter}} <!--NOW, anything entered into the filter <input> tag above^ will appear here-->
     </div>
 </div>
 
-<button class="btn btn-primary" (click)="toggleImages()">Show Images</button>
+<button class="btn btn-primary" (click)="toggleImages()">
+    {{areImagesVisible == true ? 'Hide' : 'Show'}} Images <!--Ternary statements to show hide/show images based on how they're currently displayed-->
+</button>
 
 <div class="table-responsive mt-3" *ngIf="products != null && products.length > 0">
     <table class="table">
@@ -31,14 +38,14 @@
             <tr *ngFor="let product of products">
                 <td>
                     <img *ngIf="areImagesVisible"
-                    [src] ='product.imageUrl'
-                    [title] = 'product.productName'
+                    [src] = 'product.imageUrl'
+                    [title] = 'product.productName | uppercase'
                     [style.width.px] = 'imageWidth'
                     [style.margin.px] = 'imageMargin'/>
                 </td>
-                <td>{{product.productCode}}</td>
-                <td>{{product.productName}}</td>
-                <td>{{product.price}}</td>
+                <td>{{product.productCode | lowercase}}</td>
+                <td>{{product.productName | uppercase}}</td> <!--using '|' somethingHere will transform data before the '|' according to what comes after the pipe...can create custom ones too-->
+                <td>{{product.price | currency:'EUR':'symbol':'1.2-2'}}</td>
                 <td>{{product.releaseDate}}</td>
                 <td>{{product.starRating}}</td>
             </tr>

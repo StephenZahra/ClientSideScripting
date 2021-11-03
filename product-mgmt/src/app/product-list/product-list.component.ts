@@ -67,10 +67,11 @@ export class ProductListComponent implements OnInit {
   ];
 
   areImagesVisible: boolean = true;
+  listFilter: string = '';
 
   toggleImages(): void{
     this.areImagesVisible = !this.areImagesVisible;
-    console.log(this.areImagesVisible);
+    console.log("Are images visible: "+ this.areImagesVisible);
   }
 
   getTitle(): string{
