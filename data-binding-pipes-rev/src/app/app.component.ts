@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'data-binding-pipes-rev';
 
-  birthday: Date = new Date(2021,12,13);
+  birthday: Date = new Date(2021,11,13);
 }
