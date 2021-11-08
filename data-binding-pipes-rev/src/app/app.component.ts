@@ -9,4 +9,14 @@ export class AppComponent {
   title = 'data-binding-pipes-rev';
 
   birthday: Date = new Date(2021,11,13);
+
+  dateFormat: string = 'shortDate';
+
+  toggleFormat(): void {
+    if (this.dateFormat == 'shortDate') {
+      this.dateFormat = 'fullDate';
+    } else {
+      this.dateFormat = 'shortDate';
+    }
+  }
 }

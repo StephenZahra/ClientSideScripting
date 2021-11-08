@@ -4,9 +4,22 @@
 
   <body>
     <div>
-      <p>Date formatted as: {{birthday | date}}</p>
-      <br>
-      <p>Date formatted as: {{birthday | date: 'd/M/y'}}</p>
+      <p>{{birthday | date:'mediumDate'}}</p>
+      <p>{{birthday | date:'dd/LL/YYYY'}}</p>
     </div>
+    
+    <div style="margin-top:20px;">
+    <div>
+      {{birthday | date: dateFormat}}
+    </div>
+    <div>
+      <button (click)="toggleFormat()">Toggle Format</button>
+    </div>
+    </div>
+
+    <div>
+      {{birthday | date: "longDate" | uppercase}}
+    </div>
+
   </body>
 </html>

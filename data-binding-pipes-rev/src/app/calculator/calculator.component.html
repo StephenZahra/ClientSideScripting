@@ -5,11 +5,11 @@
     <body>
         <div>
             <label>First Number:</label>
-            <input name="firstNum" type="number" placeholder="First Number" (change)="calculate()" [(ngModel)]="firstValue">
+            <input name="firstNum" type="number" placeholder="First Number" (input)="calculate()" [(ngModel)]="firstValue">
             <br><br><br><br>
 
             <label>Second Number:</label>
-            <input name="secondNum" type="number" placeholder="Second Number" (change)="calculate()" [(ngModel)]="secondValue">
+            <input name="secondNum" type="number" placeholder="Second Number" (input)="calculate()" [(ngModel)]="secondValue">
             <br><br>
 
             <p>The multiplicative result is: {{answer}}</p>
