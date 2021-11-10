@@ -39,14 +39,14 @@
                 <td>
                     <img *ngIf="areImagesVisible"
                     [src] = 'product.imageUrl'
-                    [title] = 'product.productName | uppercase'
+                    [title] = 'product.name | uppercase'
                     [style.width.px] = 'imageWidth'
                     [style.margin.px] = 'imageMargin'/>
                 </td>
-                <td>{{product.productCode | lowercase}}</td>
-                <td>{{product.productName | uppercase}}</td> <!--using '|' somethingHere will transform data before the '|' according to what comes after the pipe...can create custom ones too-->
+                <td>{{product.code | lowercase | ConvertToSpaces:'-'}}</td>
+                <td>{{product.name | uppercase}}</td> <!--using '|' somethingHere will transform data before the '|' according to what comes after the pipe...can create custom ones too-->
                 <td>{{product.price | currency:'EUR':'symbol':'1.2-2'}}</td>
-                <td>{{product.releaseDate}}</td>
+                <td>{{product.releaseDate | date}}</td>
                 <td>{{product.starRating}}</td>
             </tr>
         </tbody>
